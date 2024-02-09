@@ -1,0 +1,4 @@
+.main {
+    display: grid;
+    background-image: url('images/background.png'); /** For testing only **/
+}
