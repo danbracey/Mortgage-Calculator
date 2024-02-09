@@ -4,8 +4,38 @@
     <meta charset="UTF-8">
     <title>Mortgage Calculator</title>
     <script src="https://unpkg.com/petite-vue" defer init></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
+    <article class="main">
+        <section id="details">
+            <form>
+                <label> House Purchase Price
+                    £ <input type="number" placeholder="325000">
+                </label>
+                <label> Deposit
+                    £ <input type="number" placeholder="325000">
+                </label>
+                <div>
+                    <button name="5pc_deposit">5%</button>
+                    <button name="10pc_deposit">10%</button>
+                    <button name="5pc_deposit">15%</button>
+                </div>
+                <label> Interest Rate
+                    <input type="number" placeholder="5" max="10">%
+                </label>
+                <label> Mortgage Term
+                    <input type="number" placeholder="72"> months
+                </label>
+                <label>
+                    <input type="checkbox" value="legal"> Allow us to use your data to calculate your mortgage repayments?
+                </label>
+                <button type="submit" name="calculate">Calculate</button>
+            </form>
+        </section>
+        <aside id="results">
 
+        </aside>
+    </article>
 </body>
 </html>
