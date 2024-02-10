@@ -1,4 +1,46 @@
 .main {
-    display: grid;
     background-image: url('images/background.png'); /** For testing only **/
+    background-position-y: center;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    padding: 2%;
+}
+
+section, aside {
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    color: white;
+}
+
+input {
+    border-radius: 15px;
+}
+
+label {
+    font-family: Arial, sans-serif;
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+}
+
+div {
+    text-align: center;
+}
+
+button {
+    background-color: darkgreen;
+    height: 30px;
+    color: white;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+#calculate {
+    display: block;
+    width: 100%;
 }
