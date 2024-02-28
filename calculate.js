@@ -82,6 +82,19 @@ function displayChart(purchase_price, monthly_payment, annual_interest_rate, mor
         return array;
     }
 
+    function calculate_interest_payments(total_payment_result, mortgage_term, monthly_payment) {
+        let array = [];
+        let balance = total_payment_result
+
+        for(let i = 0; i < mortgage_term; i++) {
+            balance = parseInt((balance - monthly_payment).toFixed(2));
+            array.push(balance);
+        }
+
+        console.debug(array)
+        return array;
+    }
+
     Highcharts.chart('chart', {
 
         title: {
@@ -130,7 +143,7 @@ function displayChart(purchase_price, monthly_payment, annual_interest_rate, mor
             data: Array.from({length: mortgage_term}, () => monthly_payment)
         }, {
             name: 'Interest Payments',
-            data: Array.from({length: mortgage_term}, () => (interest_payments / 12).toFixed(2))
+            data: Array.from({length: mortgage_term}, () => parseFloat((interest_payments / 12).toFixed(2)))
         }, {
             name: 'Balance Remaining',
             data: calculate_remaining_balance(total_payment_result, mortgage_term, monthly_payment)
