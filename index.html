@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Mortgage Calculator</title>
-    <script src="https://unpkg.com/petite-vue" defer init></script>
+<!--    <script src="https://unpkg.com/petite-vue" defer init></script>-->
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="calculate.js" defer></script>
 </head>
 <body>
     <article class="main">
         <section id="details" class="section">
-            <form>
+            <form id="calculator">
                 <label> House Purchase Price
-                    £ <input type="number" placeholder="325000">
+                    £ <input type="number" id="purchase_price" placeholder="325000">
                 </label>
                 <label> Deposit
-                    £ <input type="number" placeholder="325000">
-                    <button name="5pc_deposit">5%</button>
-                    <button name="10pc_deposit">10%</button>
-                    <button name="15pc_deposit">15%</button>
+                    £ <input type="number" placeholder="325000" id="deposit">
+                    <button id="5pc_deposit">5%</button>
+                    <button id="10pc_deposit">10%</button>
+                    <button id="15pc_deposit">15%</button>
                 </label>
-                <label> Interest Rate
+                <label> Annual Interest Rate
                     <input type="number" placeholder="5" max="10">%
                 </label>
                 <label> Mortgage Term
-                    <input type="number" placeholder="72"> months
+                    <input type="number" placeholder="25"> years
                 </label>
                 <label>
                     <input type="checkbox" value="legal"> Allow us to use your data to calculate your mortgage repayments?
