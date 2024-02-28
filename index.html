@@ -6,6 +6,9 @@
 <!--    <script src="https://unpkg.com/petite-vue" defer init></script>-->
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="calculate.js" defer></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 <body>
     <article class="main">
@@ -33,13 +36,17 @@
             </form>
         </section>
         <aside id="results">
-            <p class="number" id="monthly_payment_result">£0</p>
-            <p class="description">Your monthly payment</p>
-            <p class="number" id="total_payment_result">£0</p>
-            <p class="description">Your total payment</p>
-            <p class="number" id="total_interest_payment">£0</p>
-            <p class="description">How much you'll pay in interest</p>
+            <section>
+                <p class="number" id="monthly_payment_result">£0</p>
+                <p class="description">Your monthly payment</p>
+                <p class="number" id="total_payment_result">£0</p>
+                <p class="description">Your total payment</p>
+                <p class="number" id="total_interest_payment">£0</p>
+                <p class="description">How much you'll pay in interest</p>
+            </section>
+            <div id="chart"></div>
         </aside>
     </article>
+
 </body>
 </html>

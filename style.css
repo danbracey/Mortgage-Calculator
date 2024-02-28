@@ -46,7 +46,7 @@ button {
 }
 
 
-#results {
+#results > section {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: .1fr .1fr;
@@ -57,28 +57,28 @@ button {
 }
 
 /** Put numbers in first **/
-#results p:first-child {
+#results section p:first-child {
     order: 1;
 }
 
-#results p:nth-child(3) {
+#results section p:nth-child(3) {
     order: 2;
 }
 
-#results p:nth-child(5) {
+#results section p:nth-child(5) {
     order: 3;
 }
 
 /** Put descriptions underneath **/
-#results p:nth-child(2) {
+#results section p:nth-child(2) {
     order: 4;
 }
 
-#results p:nth-child(4) {
+#results section p:nth-child(4) {
     order: 5;
 }
 
-#results p:nth-child(6) {
+#results section p:nth-child(6) {
     order: 6;
 }
 
