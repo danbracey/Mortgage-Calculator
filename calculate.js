@@ -1,6 +1,7 @@
 document.getElementById("calculate").addEventListener("click", function(event){
     //Prevent default handling of the mortgage calculator, so it can be handled client-side
     event.preventDefault()
+    display_results();
 });
 
 document.getElementById("5pc_deposit").addEventListener("click", function(event){
@@ -43,6 +44,22 @@ function calculate(purchase_price, deposit, annual_interest_rate, loan_term) {
 
     //Correct a rounding error
     return parseFloat(monthly_payment.toFixed(2));
+}
+
+function display_results() {
+    let purchase_price = document.getElementById("purchase_price").value
+    let deposit = document.getElementById("deposit").value
+    let annual_interest_rate = document.getElementById("annual_interest_rate").value
+    let mortgage_term = document.getElementById("mortgage_term").value
+
+    if(document.getElementById("legal").checked) {
+        let monthly_payment = calculate(purchase_price, deposit, annual_interest_rate, mortgage_term);
+        document.getElementById("monthly_payment_result").innerText = '£' + monthly_payment;
+        document.getElementById("total_payment_result").innerText = '£' + (monthly_payment * 12) * mortgage_term;
+        document.getElementById("total_interest_payment").innerText = '£' + (monthly_payment * annual_interest_rate / 12).toFixed(2) * mortgage_term;
+    } else {
+        alert("Please allow us to use your data to calculate your mortgage repayments!")
+    }
 }
 
 module.exports = calculate;
