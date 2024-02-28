@@ -24,3 +24,8 @@ document.getElementById("15pc_deposit").addEventListener("click", function(event
     document.getElementById("deposit").value = Math.round(15 * purchase_price / 100);
 });
 
+function calculate(house_purchase_price, deposit, interest_rate, loan_term) {
+
+}
+
+module.exports = calculate;
