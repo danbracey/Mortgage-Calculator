@@ -1,4 +1,4 @@
-document.getElementById("calculator").addEventListener("click", function(event){
+document.getElementById("calculate").addEventListener("click", function(event){
     //Prevent default handling of the mortgage calculator, so it can be handled client-side
     event.preventDefault()
 });
@@ -20,3 +20,4 @@ document.getElementById("15pc_deposit").addEventListener("click", function(){
     //Calculate 15% of purchase price and set the value of the deposit input.
     document.getElementById("deposit").value = 15 * purchase_price / 100
 });
+
