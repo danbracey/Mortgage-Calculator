@@ -44,3 +44,48 @@ button {
     display: block;
     width: 100%;
 }
+
+
+#results > section {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: .1fr .1fr;
+    grid-template-areas: "1 2 3"
+                         "4 5 6";
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    justify-items: center;
+}
+
+/** Put numbers in first **/
+#results section p:first-child {
+    order: 1;
+}
+
+#results section p:nth-child(3) {
+    order: 2;
+}
+
+#results section p:nth-child(5) {
+    order: 3;
+}
+
+/** Put descriptions underneath **/
+#results section p:nth-child(2) {
+    order: 4;
+}
+
+#results section p:nth-child(4) {
+    order: 5;
+}
+
+#results section p:nth-child(6) {
+    order: 6;
+}
+
+/*#results > span {*/
+/*    display: none;*/
+/*}*/
+
+.number {
+    font-size: xx-large;
+}

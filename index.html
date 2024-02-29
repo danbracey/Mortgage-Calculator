@@ -6,6 +6,9 @@
 <!--    <script src="https://unpkg.com/petite-vue" defer init></script>-->
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="calculate.js" defer></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 <body>
     <article class="main">
@@ -21,20 +24,29 @@
                     <button id="15pc_deposit">15%</button>
                 </label>
                 <label> Annual Interest Rate
-                    <input type="number" placeholder="5" max="10">%
+                    <input type="number" placeholder="5" max="10" id="annual_interest_rate">%
                 </label>
                 <label> Mortgage Term
-                    <input type="number" placeholder="25"> years
+                    <input type="number" placeholder="25" id="mortgage_term"> years
                 </label>
                 <label>
-                    <input type="checkbox" value="legal"> Allow us to use your data to calculate your mortgage repayments?
+                    <input type="checkbox" value="legal" id="legal"> Allow us to use your data to calculate your mortgage repayments?
                 </label>
                 <button type="submit" name="calculate" id="calculate">Calculate</button>
             </form>
         </section>
         <aside id="results">
-
+            <section>
+                <p class="number" id="monthly_payment_result">£0</p>
+                <p class="description">Your monthly payment</p>
+                <p class="number" id="total_payment_result">£0</p>
+                <p class="description">Your total payment</p>
+                <p class="number" id="total_interest_payment">£0</p>
+                <p class="description">How much you'll pay in interest</p>
+            </section>
+            <div id="chart"></div>
         </aside>
     </article>
+
 </body>
 </html>
