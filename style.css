@@ -1,11 +1,11 @@
 .main {
-    background-image: url('images/background.png'); /** For testing only **/
+    background-image: url('images/background-min.png');
     background-position-y: center;
 }
 
 article {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30em), 1fr));
     grid-gap: 20px;
     padding: 2%;
 }
@@ -15,6 +15,11 @@ section, aside {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 15px;
     color: white;
+}
+
+aside {
+    /* Hide the results panel by default */
+    display: none;
 }
 
 input {
@@ -45,15 +50,21 @@ button {
     width: 100%;
 }
 
-
 #results > section {
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: .1fr .1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "1 2 3"
                          "4 5 6";
     font-family: 'Helvetica', 'Arial', sans-serif;
     justify-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    #results > section {
+        display: contents;
+        margin: auto;
+        width: 50%;
+    }
 }
 
 /** Put numbers in first **/
