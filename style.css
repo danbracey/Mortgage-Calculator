@@ -13,7 +13,7 @@
     --currency-display-font: 'Helvetica'; /* Default value: 'Helvetica' - This specifies the font displaying the breakdown of payments. A backup font of Arial should an invalid property be used. **/
 }
 
-   /** Do not touch values below this line **/
+/** Do not touch values below this line **/
 
 .main {
     background-color: var(--background-image-colour);
@@ -33,6 +33,11 @@ section, aside {
     background-color: var(--section-background-colour);
     padding: 5px;
     color: var(--section-font-colour);
+}
+
+/*This provides accessible headers to assistive technologies and validates the HTML, but it shouldn't display to the user */
+h1, h2 {
+    display: none;
 }
 
 aside {
