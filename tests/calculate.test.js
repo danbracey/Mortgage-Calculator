@@ -13,7 +13,6 @@ function calculate(house_purchase_price, deposit, annual_interest_rate, loan_ter
     return parseFloat(monthly_payment.toFixed(2));
 }
 
-
 test.only('Test that mortgage calculator functions with pre-defined values', () => {
     expect(calculate(180000, 18000, 6, 25)).toBe(1043.77);
 });
