@@ -1,5 +1,23 @@
+/* Customise values below this line */
+:root {
+    --background-image-colour: #333333; /* Comment the line below out to use a solid background colour */
+    --background-image: url('images/background-min.png'); /* Comment this line out to use the solid background colour above. Default value: images/background-min.png */
+    --display-results-on-launch: none; /* Use 'none' to hide the results panel (Recommended), or 'initial' to show £0 in the results section before calculator use */
+    --label-font-name: Arial; /* Default value: 5px */
+    --label-padding: 5px; /* Default/Recommended value: 5px */
+    --label-colour: white; /* Default value: white */
+    --section-background-colour: rgba(0, 0, 0, 0.7); /* Default value: rgba(0, 0, 0, 0.7) - Note the rgba opacity of 0.7 to combine with the background image */
+    --section-font-colour: white; /* Default value: white */
+    --button-background-colour: darkgreen; /* Default value: darkgreen */
+    --button-text-colour: white; /* Default value: white */
+    --currency-display-font: 'Helvetica'; /* Default value: 'Helvetica' - This specifies the font displaying the breakdown of payments. A backup font of Arial should an invalid property be used. **/
+}
+
+   /** Do not touch values below this line **/
+
 .main {
-    background-image: url('images/background-min.png');
+    background-color: var(--background-image-colour);
+    background-image: var(--background-image);
     background-position-y: center;
 }
 
@@ -12,14 +30,14 @@ article {
 
 section, aside {
     border-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    color: white;
+    background-color: var(--section-background-colour);
+    padding: 5px;
+    color: var(--section-font-colour);
 }
 
 aside {
     /* Hide the results panel by default */
-    display: none;
+    display: var(--display-results-on-launch);
 }
 
 input {
@@ -27,9 +45,9 @@ input {
 }
 
 label {
-    font-family: Arial, sans-serif;
+    font-family: var(--label-font-name), sans-serif;
     display: block;
-    padding: 5px;
+    padding: var(--label-padding);
     font-weight: bold;
 }
 
@@ -38,9 +56,9 @@ div {
 }
 
 button {
-    background-color: darkgreen;
+    background-color: var(--button-background-colour);
     height: 30px;
-    color: white;
+    color: var(--button-text-colour);
     border-radius: 15px;
     font-size: 15px;
 }
@@ -54,8 +72,8 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "1 2 3"
-                         "4 5 6";
-    font-family: 'Helvetica', 'Arial', sans-serif;
+                     "4 5 6";
+    font-family: var(--currency-display-font), 'Arial', sans-serif;
     justify-items: center;
 }
 
@@ -68,6 +86,7 @@ button {
 }
 
 /** Put numbers in first **/
+
 #results section p:first-child {
     order: 1;
 }
@@ -81,6 +100,7 @@ button {
 }
 
 /** Put descriptions underneath **/
+
 #results section p:nth-child(2) {
     order: 4;
 }
@@ -92,10 +112,6 @@ button {
 #results section p:nth-child(6) {
     order: 6;
 }
-
-/*#results > span {*/
-/*    display: none;*/
-/*}*/
 
 .number {
     font-size: xx-large;
